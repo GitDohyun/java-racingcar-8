@@ -6,7 +6,9 @@ public class Application {
     public static void main(String[] args) {
         InputReader inputReader = new InputReader();
         List<String> carNames = inputReader.readCarNames();
-        long tryCount = inputReader.readTryCount();
+        int tryCount = inputReader.readTryCount();
 
+        Racing racing = new Racing(carNames);
+        racing.start(tryCount);
     }
 }

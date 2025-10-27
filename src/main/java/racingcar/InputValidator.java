@@ -45,14 +45,14 @@ public class InputValidator {
 
     private void validateNumber(String input) {
         try {
-            long count = Long.parseLong(input);
+            int count = Integer.parseInt(input);
             parsePositiveInteger(count);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException();
         }
     }
 
-    private void parsePositiveInteger(long count) {
+    private void parsePositiveInteger(int count) {
         if (count < 1) {
             throw new IllegalArgumentException();
         }

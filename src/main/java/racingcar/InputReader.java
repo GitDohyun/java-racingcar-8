@@ -21,11 +21,11 @@ public class InputReader {
         return carNames;
     }
 
-    public long readTryCount() {
+    public int readTryCount() {
         System.out.println("시도할 횟수는 몇 회인가요?");
         String input = Console.readLine();
         validator.validateTryCount(input);
-        long tryCount = Long.parseLong(input);
+        int tryCount = Integer.parseInt(input);
         Console.close();
         return tryCount;
     }
