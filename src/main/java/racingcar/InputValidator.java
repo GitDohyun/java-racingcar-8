@@ -13,6 +13,12 @@ public class InputValidator {
 
     }
 
+    public void validateTryCount(String input) {
+        validateEmpty(input);
+        validateNumber(input);
+
+    }
+
     private void validateEmpty(String input) {
         if(input == null || input.trim().isEmpty()) {
             throw new IllegalArgumentException();
@@ -33,6 +39,21 @@ public class InputValidator {
 
     private void validateEndWithComma(String input) {
         if (input.endsWith(",")) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private void validateNumber(String input) {
+        try {
+            long count = Long.parseLong(input);
+            parsePositiveInteger(count);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private void parsePositiveInteger(long count) {
+        if (count < 1) {
             throw new IllegalArgumentException();
         }
     }

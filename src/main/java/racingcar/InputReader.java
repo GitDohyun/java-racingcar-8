@@ -20,4 +20,13 @@ public class InputReader {
         validator.validateCarNames(carNames, input);
         return carNames;
     }
+
+    public long readTryCount() {
+        System.out.println("시도할 횟수는 몇 회인가요?");
+        String input = Console.readLine();
+        validator.validateTryCount(input);
+        long tryCount = Long.parseLong(input);
+        Console.close();
+        return tryCount;
+    }
 }
