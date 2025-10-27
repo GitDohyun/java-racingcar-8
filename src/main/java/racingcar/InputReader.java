@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class InputReader {
     private final InputValidator validator;
+
     public InputReader() {this.validator = new InputValidator();}
 
     public List<String> readCarNames() {

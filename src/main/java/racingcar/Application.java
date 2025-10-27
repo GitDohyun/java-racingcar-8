@@ -10,5 +10,8 @@ public class Application {
 
         Racing racing = new Racing(carNames);
         racing.start(tryCount);
+
+        Winner winner = new Winner();
+        winner.printWinner(racing.positions());
     }
 }
