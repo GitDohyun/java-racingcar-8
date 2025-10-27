@@ -1,0 +1,40 @@
+package racingcar;
+
+import java.util.List;
+
+public class InputValidator {
+    public void validateCarNames(List<String> carNames, String input) {
+        carNames.forEach(name -> {
+            validateEmpty(name);
+            validateLength(name);
+            validateEnglishOnly(name);
+        });
+        validateEndWithComma(input);
+
+    }
+
+    private void validateEmpty(String input) {
+        if(input == null || input.trim().isEmpty()) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private void validateLength(String name) {
+        if (name.length() > 5) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private void validateEnglishOnly(String name)  {
+        if (!name.matches("[a-zA-Z]+")) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    private void validateEndWithComma(String input) {
+        if (input.endsWith(",")) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+}
