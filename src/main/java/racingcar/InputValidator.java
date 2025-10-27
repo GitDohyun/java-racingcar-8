@@ -20,7 +20,7 @@ public class InputValidator {
     }
 
     private void validateEmpty(String input) {
-        if(input == null || input.trim().isEmpty()) {
+        if (input == null || input.trim().isEmpty()) {
             throw new IllegalArgumentException();
         }
     }
@@ -31,7 +31,7 @@ public class InputValidator {
         }
     }
 
-    private void validateEnglishOnly(String name)  {
+    private void validateEnglishOnly(String name) {
         if (!name.matches("[a-zA-Z]+")) {
             throw new IllegalArgumentException();
         }
